@@ -30,15 +30,15 @@ jobs:
          cd $GITHUB_WORKSPACE/reports
          ls -al
 
-      - name: generate html report
-        uses: artilleryio/action-cli@v1
-        with:
-          command: report reports/report.json --output reports/report.html
+      # - name: generate html report
+      #   uses: artilleryio/action-cli@v1
+      #   with:
+      #     command: report reports/report.json --output reports/report.html
 
 
-      - name: Upload html report
-        uses: actions/upload-artifact@v3
-        with:
-          name: artillery-reports
-          path: /home/runner/work/artillery/reports/report.html   # using WORKSPACE variable does not work
+      # - name: Upload html report
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: artillery-reports
+      #     path: /home/runner/work/artillery/reports/report.html   # using WORKSPACE variable does not work
 
