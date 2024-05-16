@@ -1,3 +1,5 @@
+// TODO Add AfterEach to close browser
+
 import { test, expect } from "@playwright/test";
 // import AddComputerPage from "./support/pageobjectmodel/pages/addComputer.page";
 // import ComputersPage from "./support/pageobjectmodel/pages/computers.page";
