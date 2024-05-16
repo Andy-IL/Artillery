@@ -27,8 +27,8 @@ scenarios:
               url: '/pony'
           - get:
               url: '/armadillo'
-          - think: 15
-        count: 10
+          - think: 10
+        count: 5
   # Load & configure a couple of useful plugins
   # https://docs.art/reference/extensions
 # plugins:

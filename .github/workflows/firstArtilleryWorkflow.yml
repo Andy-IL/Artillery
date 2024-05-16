@@ -28,7 +28,9 @@ jobs:
       - name: look for report file
         run: |         
          cd $GITHUB_WORKSPACE/reports
+         pwd
          ls -al
+         cd ..
 
       - name: generate html report
         uses: artilleryio/action-cli@v1
