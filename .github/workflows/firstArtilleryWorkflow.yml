@@ -31,9 +31,9 @@ jobs:
          ls -al
 
       - name: generate html report
-        run: 
+        uses: artilleryio/action-cli@v1
         with:
-         command: report reports/report.json --output reports/report.html
+          command: report reports/report.json --output reports/report.html
 
 
       - name: Upload html report
