@@ -25,22 +25,22 @@ jobs:
         with:
           command: run firstArtilleryScenario.yml  --output reports/report.json
 
-      - name: look for report file
-        run: |         
-         cd $GITHUB_WORKSPACE/reports
-         pwd
-         ls -al
-         cd ..
-         ls -al
-
       - name: generate html report
         uses: artilleryio/action-cli@v1
         with:
           command: report reports/report.json --output reports/report.html 
 
+      - name: look for report file
+        run: |         
+           cd $GITHUB_WORKSPACE/reports
+           pwd
+           ls -al
+           cd ..
+           ls -al
+  
       - name: Upload html report
         uses: actions/upload-artifact@v4
         with:
           name: artillery-reports
-          path: /home/runner/work/Artillery/reports/report.html   # using WORKSPACE variable does not work
+          path: /home/runner/work/Artillery/Artillery/reports/report.html   # using WORKSPACE variable does not work
 
