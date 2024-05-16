@@ -1,0 +1,44 @@
+name: Artillery Load Test
+ 
+on:
+  workflow_dispatch:
+
+  # push:
+  #   branches:
+  #     - main
+  # schedule:
+  #   - cron: '0 0 * * *'
+ 
+jobs:
+  artillery:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+ 
+      - name: Make reports directory
+        run: mkdir reports
+ 
+      - name: Execute load tests
+        uses: artilleryio/action-cli@v1
+        with:
+          command: run firstArtilleryScenario.yml  --output reports/report.json
+
+      - name: look for report file
+        run: |         
+         cd $GITHUB_WORKSPACE/reports
+         ls -al
+
+      - name: generate html report
+        run: 
+        with:
+         command: report reports/report.json --output reports/report.html
+
+
+      - name: Upload html report
+        uses: actions/upload-artifact@v3
+        with:
+          name: artillery-reports
+          path: /home/runner/work/artillery/reports/report.html   # using WORKSPACE variable does not work
+
