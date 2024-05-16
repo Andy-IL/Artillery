@@ -31,16 +31,16 @@ jobs:
          pwd
          ls -al
          cd ..
+         ls -al
 
       - name: generate html report
         uses: artilleryio/action-cli@v1
         with:
-          command: report reports/report.json --output reports/report.html
-
+          command: report reports/report.json --output reports/report.html 
 
       - name: Upload html report
         uses: actions/upload-artifact@v4
         with:
           name: artillery-reports
-          path: /home/runner/work/artillery/reports/report.html   # using WORKSPACE variable does not work
+          path: /home/runner/work/Artillery/reports/report.html   # using WORKSPACE variable does not work
 
