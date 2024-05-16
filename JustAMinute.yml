@@ -1,0 +1,21 @@
+# artillery script 
+# trying to keep down the arrival rate 
+#  60 requests / min 
+# Planit Amplify designed this 
+#
+#
+
+config:
+  target: "http://asciiart.artillery.io:8080"
+  phases:
+    - name: "dinoPhase1"
+      duration: 120
+      arrivalRate: 2
+#      rampTo: 5
+scenarios:
+  - name: "Load Test"
+    flow:
+ #     - loop:
+          - get:
+              url: "/dino"
+ #             count: 60

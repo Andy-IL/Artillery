@@ -1,0 +1,18 @@
+# first artillery scenario
+# 2 VUsers
+# 
+config: 
+   target: "https://playwright.dev/"
+   engines: 
+     playwright: {}
+     processor: "./tests/artilleryPlaywright.js"  
+#   processor: "./tests/tryFunction.js"  
+phases:
+   - name: constantLoad 
+     duration:  10
+     arrivalRate: 2
+    
+scenarios: 
+  - name: firstArtillery
+    engine: playwright
+    testFunction: "./tests/tryFunction.spec.js"
