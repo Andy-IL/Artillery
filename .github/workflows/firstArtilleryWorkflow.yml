@@ -3,9 +3,9 @@ name: Artillery Load Test
 on:
   workflow_dispatch:
 
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   # schedule:
   #   - cron: '0 0 * * *'
  
@@ -30,7 +30,7 @@ jobs:
         with:
           command: report reports/report.json --output reports/report.html 
 
-      - name: look for report file
+      - name: look for report files
         run: |         
            cd $GITHUB_WORKSPACE/reports
            pwd
