@@ -15,7 +15,7 @@ jobs:
  
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
  
       - name: Make reports directory
         run: mkdir reports
@@ -39,7 +39,7 @@ jobs:
 
 
       - name: Upload html report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artillery-reports
           path: /home/runner/work/artillery/reports/report.html   # using WORKSPACE variable does not work
