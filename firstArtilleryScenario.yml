@@ -1,5 +1,6 @@
 # first artillery scenario
 # 2 VUsers
+#  API KEy for when we can run remotely a9_0TeJL78cIJCEYXj7TrSyICEzdJz97Mf7
 # 
 config:
   # This is a test server run by team Artillery
@@ -7,15 +8,18 @@ config:
   target: "http://asciiart.artillery.io:8080"
   http:
     timeout: 20
+    extendedMetrics: true
 #   defaults:
 #      think: 
 #        jitter: 3s
+
   phases:
      - name: Warm up phase
        duration: 1
-       arrivalRate: 1
+       arrivalRate: 2
 #      rampTo: 5
-      
+  plugins:
+    metrics-by-endpoint: {}
     
 scenarios:
   - name: firstArtillery

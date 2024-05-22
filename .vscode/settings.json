@@ -3,7 +3,8 @@
         "https://www.artillery.io/schema.json": [
             "file:///c%3A/performance_testing/artillery/firstArtilleryScenario.yml",
             "file:///c%3A/performance_testing/artillery/firstArtilleryPWScenario.yml",
-            "file:///c%3A/performance_testing/artillery/JustAMinute.yml"
+            "file:///c%3A/performance_testing/artillery/JustAMinute.yml",
+            "file:///c%3A/performance_testing/artillery/ArtilleryAsciiArt.yml"
         ]
     }
 }

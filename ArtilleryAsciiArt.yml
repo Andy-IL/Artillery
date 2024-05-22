@@ -1,0 +1,52 @@
+#  artillery scenario
+# 2-5 VUsers
+#  API KEy for when we can run remotely a9_0TeJL78cIJCEYXj7TrSyICEzdJz97Mf7
+# 
+config:
+  # This is a test server run by team Artillery
+  # It's designed to be highly scalable
+  target: "http://asciiart.artillery.io:8080"
+  http:
+    timeout: 20
+    extendedMetrics: true
+  # defaults:
+  #     think: 
+  #        jitter: 0.3s
+  # Load & configure a couple of useful plugins
+  # https://docs.art/reference/extensions
+  plugins:
+#     ensure: {}
+#     apdex: {}
+    metrics-by-endpoint: {}
+    apdex:
+      threshold: 100
+  ensure:
+    thresholds:
+      - http.response_time.p99: 100
+      - http.response_time.p95: 75
+
+  phases:
+     - name: Warm up phase
+       duration: 20
+       arrivalRate: 2
+       rampTo: 5
+     - name: Steady-state
+       duration: 160
+       arrivalRate: 5  
+
+    
+scenarios:
+  - name: ASCII_Art
+    flow:
+      - loop:
+      #  iteration time 12 sec + responses
+          - get:
+              url: '/dino'
+          - think: 4    
+          - get:
+              url: '/pony'
+          - think: 4
+          - get:
+              url: '/armadillo'
+          - think: 4 
+        count: 20
