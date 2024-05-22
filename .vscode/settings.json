@@ -4,7 +4,8 @@
             "file:///c%3A/performance_testing/artillery/firstArtilleryScenario.yml",
             "file:///c%3A/performance_testing/artillery/firstArtilleryPWScenario.yml",
             "file:///c%3A/performance_testing/artillery/JustAMinute.yml",
-            "file:///c%3A/performance_testing/artillery/ArtilleryAsciiArt.yml"
+            "file:///c%3A/performance_testing/artillery/ArtilleryAsciiArt.yml",
+            "git:/c%3A/performance_testing/artillery/ArtilleryAsciiArt.yml?%7B%22path%22%3A%22c%3A%5C%5Cperformance_testing%5C%5Cartillery%5C%5CArtilleryAsciiArt.yml%22%2C%22ref%22%3A%22~%22%7D"
         ]
     }
 }

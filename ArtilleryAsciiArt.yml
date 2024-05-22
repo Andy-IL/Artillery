@@ -27,19 +27,19 @@ config:
 
   phases:
      - name: Warm up phase
-       duration: 20
-       arrivalRate: 2
+       duration: 5
+       arrivalRate: 1
        rampTo: 5
-     - name: Steady-state
-       duration: 160
-       arrivalRate: 5  
+    #  - name: Steady-state
+    #    duration: 160
+    #    arrivalRate: 5  
 
     
 scenarios:
   - name: ASCII_Art
     flow:
       - loop:
-      #  iteration time 12 sec + responses
+      #  iteration time (12 sec + responses) * 20 i.e. min. 240 
           - get:
               url: '/dino'
           - think: 4    
