@@ -26,10 +26,10 @@ config:
       - http.response_time.p95: 75
 
   phases:
-     - name: Warm up phase
-       duration: 5
-       arrivalRate: 1
-       rampTo: 5
+     - name: Ramp up phase
+       duration: 50
+       arrivalRate: 2
+       rampTo: 10
     #  - name: Steady-state
     #    duration: 160
     #    arrivalRate: 5  

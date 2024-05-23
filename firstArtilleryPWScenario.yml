@@ -3,16 +3,18 @@
 # 
 config: 
    target: "https://playwright.dev/"
-   engines: 
-     playwright: {}
-     processor: "./tests/artilleryPlaywright.js"  
-#   processor: "./tests/tryFunction.js"  
-phases:
+   processor: "./tests/artilleryPlaywright.js"  
+   phases:
    - name: constantLoad 
      duration:  10
      arrivalRate: 2
+   engines: 
+     playwright: 
+       launchOptions:
+         headless: false
+#    processor: "./tests/tryFunction.js"  
     
 scenarios: 
   - name: firstArtillery
     engine: playwright
-    testFunction: "./tests/tryFunction.spec.js"
+    testFunction: "firstTest"

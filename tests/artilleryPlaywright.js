@@ -2,7 +2,11 @@
 // simple example for artillery running playwright
 // but artillery doesn't understand "test()" 
 //
-const {  expect, Page } = require( '@playwright/test');
+const {  test, expect, Page } = require( '@playwright/test');
+module.exports = {
+  firstTest
+
+}; 
 
 async function firstTest (page) 
 { 
@@ -18,7 +22,3 @@ async function firstTest (page)
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 } 
 
-module.exports = {
-   firstTest
-
-}; 
