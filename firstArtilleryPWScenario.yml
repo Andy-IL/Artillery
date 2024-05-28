@@ -11,7 +11,7 @@ config:
    engines: 
      playwright: 
        launchOptions:
-         headless: false
+         headless: true
 #    processor: "./tests/tryFunction.js"  
     
 scenarios: 

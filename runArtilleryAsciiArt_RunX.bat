@@ -6,7 +6,7 @@ rem CAUTION if requesting much data, DEBUG grabs loads !
 rem set DEBUG=http*
 rem run from artillery project directory
 set runArtillery=".\\node_modules\\.bin\\artillery"
-set reportFile=".\\test-results\\ArtilleryAsciiArt-2024-05-23_report01"
+set reportFile=".\\test-results\\ArtilleryAsciiArt-2024-05-24_report01"
 set YAMLFile="ArtilleryAsciiArt.yml"
 rem run to cloud 
 rem call "%runArtillery%" run  "%YAMLFile%" --record --key a9_0TeJL78cIJCEYXj7TrSyICEzdJz97Mf7

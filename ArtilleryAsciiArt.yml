@@ -29,7 +29,8 @@ config:
      - name: Ramp up phase
        duration: 50
        arrivalRate: 2
-       rampTo: 10
+       maxVusers: 20
+      #  rampTo: 10
     #  - name: Steady-state
     #    duration: 160
     #    arrivalRate: 5  
